@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        .account{
+            width:500px;
+            border:1px solid ;
+            height:350px;
+
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:200px;
+        }
+        .account h1{
+            text-align:center;
+        }
+    </style>
+    <link rel="stylesheet" href="/static/css/commons.css">
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
+</head>
+<body>
+    <div class="account">
+        <h1 class="c2">用户登录</h1>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">用户名或手机号</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">密码</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 记住密码
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                登录
+            </button>
+        </form>
+    </div>
+<script src="static/javascript/jquery-3.6.0.min.js"></script>
+<script src="/static/plugins/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
