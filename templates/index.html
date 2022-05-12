@@ -9,9 +9,10 @@
             color:red
         }
     </style>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
 </head>
 <body>
-    <h1>中国联通</h1>
+    <h1>{{title}}</h1>
     <h3>广西</h3>
     <a href="/news" target="_blank">跳转</a>
     <img src="/static/img/1.jpg"/>
@@ -21,11 +22,20 @@
             <tr> <th>姓名</th> <th>年龄</th> </tr>
         </thead>
         <tbody>
-            <tr>  <td>zhangsan</td> <td>18</td> </tr>
-            <tr>  <td>lisi</td>     <td>1</td> </tr>
+        {% for name in name_list %}
+        {% for age in age_list %}
+            <tr>
+                <td>{{name}}</td> <td>{{age}}</td>
+            </tr>
+        {% endfor %}
+        {% endfor %}
         </tbody>
     </table>
     <a href="/register" target="_blank">注册</a>
     <a href="/login" target="_blank" class="c1">登录</a>
+    <a href="/js" target="_blank" style=color:green>js练习</a>
+    <a href="/jquery" target="_blank" style=color:blue>jquery练习</a>
+<script src="static/javascript/jquery-3.6.0.min.js"></script>
+<script src="/static/plugins/bootstrap-3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
