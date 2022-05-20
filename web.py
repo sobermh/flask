@@ -9,7 +9,7 @@ import pymysql
 # 导入socket 库
 from socket import *
 from threading import Thread
-
+import re
 
 
 app=Flask(__name__)
@@ -95,19 +95,23 @@ def fromtcp():
         cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
         ip=request.form.get("ip")
         port=request.form.get("port")
-        sql="select data from data where ip=%s and port=%s and connect_time =(select connect_time from data  order by connect_time desc limit 1)"
+        sql="select CH1,CH2,CH3,CH4,CH5,CH6,CH7,CH8 from data where ip=%s and port=%s and connect_time =(select connect_time from data  order by connect_time desc limit 1)"
         cursor.execute(sql,[ip,port])
         data=cursor.fetchall()
-        str1=""
+        print(data)
+        CH=list()
         for index in data:
             str=''
             for i in  list(index.values()):
                 str+=i
-            str1=str1+" "+str
+            #     # 将字符串每两个以空格隔开
+            # result = re.sub(r"(?<=\w)(?=(?:\w\w)+$)", " ", str)
+            print(str)
+            CH.append(str)
         # 关闭连接
         cursor.close()
         conn.close()
-        return render_template("fromtcp.html",info=str1)
+        return render_template("fromtcp.html",info=CH)
     else:
         return render_template("fromtcp.html")
 if __name__=='__main__':

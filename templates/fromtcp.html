@@ -5,7 +5,34 @@
     <title>tcp接收数据展示</title>
 </head>
 <body>
-    {{info}}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>CH1</th>
+                <th>CH2</th>
+                <th>CH3</th>
+                <th>CH4</th>
+                <th>CH5</th>
+                <th>CH6</th>
+                <th>CH7</th>
+                <th>CH8</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chx in info %}
+            <tr>
+                <td>{{chx[0:2]}}</td>
+                <td>{{chx[2:4]}}</td>
+                <td>{{chx[4:6]}}</td>
+                <td>{{chx[6:8]}}</td>
+                <td>{{chx[8:10]}}</td>
+                <td>{{chx[10:12]}}</td>
+                <td>{{chx[12:14]}}</td>
+                <td>{{chx[14:16]}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     <form method="post" action="/fromtcp" onsubmit="return check(this)">
             <div class="form-group">
                 <label for="Inputuser1">ip</label>
